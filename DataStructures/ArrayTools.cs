@@ -11,7 +11,15 @@ public static class ArrayTools
     public static int IndexOf(int[] data, int count, int target)
     {
         // TODO: Part A, demo
-        throw new NotImplementedException();
+        for (int i = 0; i < count; i++)
+        {
+            if (data[i] == target)
+            {
+                return i;
+            }
+        }
+        return -1;
+        
     }
 
     // Insert: shift right starting from the END, then drop the value
@@ -19,7 +27,12 @@ public static class ArrayTools
     public static int InsertAt(int[] data, int count, int index, int value)
     {
         // TODO: Part A, demo
-        throw new NotImplementedException();
+        for (int i = count; i > index; i--)
+        {
+            data[i] = data[i - 1];
+        }
+        data[index] = value;
+        return count + 1;
     }
 
     // Remove: shift left starting at the gap. The last slot is no longer
@@ -27,7 +40,11 @@ public static class ArrayTools
     public static int RemoveAt(int[] data, int count, int index)
     {
         // TODO: Part A, Exercise 1
-        throw new NotImplementedException();
+        for (int i = index; i < count - 1; i++)
+        {
+            data[i] = data[i + 1];
+        }
+        return count - 1;
     }
 
     // Given. Builds a line like "10 20 30" from the slots in use.
