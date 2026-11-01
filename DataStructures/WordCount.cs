@@ -12,6 +12,22 @@ public static class WordCount
     public static Dictionary<string, int> Count(string text)
     {
         // TODO: Part E, Exercise 5
-        throw new NotImplementedException();
+        Dictionary<string, int> counts = new Dictionary<string, int>();
+        char[] separators = { ' ', ',', '.', '!', '?', ';', ':' };
+        string[] words = text.ToLower().Split(separators,
+        StringSplitOptions.RemoveEmptyEntries);
+       
+        foreach (string word in words)
+        {
+            if (counts.ContainsKey(word))
+            {
+                counts[word]++;
+            }
+            else
+            {
+                counts[word] = 1;
+            }
+        }
+        return counts;
     }
 }
