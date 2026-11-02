@@ -16,15 +16,18 @@ public class MyList<T>
     }
 
     // TODO: Part B. How many slots are in use.
+    //returns the number of items in the list
     public int Count => count;
 
     // TODO: Part B. How many slots exist (the array's Length).
+    //returns the number of slots in the list
     public int Capacity => items.Length;
 
     // Add to the end. Grow first if every slot is taken.
     public void Add(T item)
     {
         // TODO: Part B, demo
+        //checks if the list is full, grows if it is, adds the item to the end, and increments count
         if (count == items.Length)
         {
             Grow();

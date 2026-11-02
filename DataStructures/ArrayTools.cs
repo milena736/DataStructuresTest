@@ -10,7 +10,7 @@ public static class ArrayTools
     // Return the index, or -1 when the target is not there.
     public static int IndexOf(int[] data, int count, int target)
     {
-        // TODO: Part A, demo
+        // Checks every slot and returns either the index of the match or -1
         for (int i = 0; i < count; i++)
         {
             if (data[i] == target)
@@ -27,6 +27,7 @@ public static class ArrayTools
     public static int InsertAt(int[] data, int count, int index, int value)
     {
         // TODO: Part A, demo
+        //starts from the end, shifts items after index to the right, adds new value, and returns new count
         for (int i = count; i > index; i--)
         {
             data[i] = data[i - 1];
@@ -40,6 +41,7 @@ public static class ArrayTools
     public static int RemoveAt(int[] data, int count, int index)
     {
         // TODO: Part A, Exercise 1
+        //Starts from the index, shifts items after index to the left, and returns count - 1
         for (int i = index; i < count - 1; i++)
         {
             data[i] = data[i + 1];
